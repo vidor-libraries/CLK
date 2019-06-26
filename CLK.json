@@ -1,0 +1,40 @@
+{
+  "module":{
+    "name":"clock_source",
+    "version":"18.1",
+    "parameters":[
+      {"name":"clockFrequency", "def":"50000000"},
+      {"name":"clockFrequencyKnown", "def":"true"},
+      {"name":"inputClockFrequency", "def":"0"},
+      {"name":"resetSynchronousEdges", "def":"NONE"}
+    ]
+  },
+  "interfaces":[
+    {
+      "name":"clk_in",
+      "mates":["pins"],
+      "visibility":"2",
+      "signals": [
+        {"name":"clk", "bits":"1", "direction":"output"}
+      ]
+    },
+    {
+      "name":"clk_in_reset",
+      "mates":["pins"],
+      "visibility":"2",
+      "signals": [
+        {"name":"reset_n", "bits":"1", "direction":"output"}
+      ]
+    }
+  ],
+  "hw":[
+    {
+      "interface":"clk",
+      "name":"clk"
+    },
+    {
+      "interface":"clk_reset",
+      "name":"clk_reset"
+    }
+  ]
+}
